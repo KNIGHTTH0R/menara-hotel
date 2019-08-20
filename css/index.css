@@ -1,0 +1,124 @@
+@font-face {
+    font-family: welcome;
+    src: url("../fonts/MidNight.ttf");
+}
+
+.background {
+    background-image: url("../images/background.jpg");
+    top: 0px;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+}
+
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(0, 0, 0, 0.3);
+    display: inline-block;
+    width: 100%;
+    top: 0px;
+    position: fixed;
+}
+
+#menu {
+    float: right;
+}
+
+.header table {
+    width: 100%;
+    color: white;
+}
+
+.dropbtn {
+    color: white;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+    color: white;
+    background-color: rgb(0, 0, 0, 0.3);
+    padding: 12px 16px;
+    display: block;
+    text-decoration-style: none;
+}
+
+.dropdown-content a:hover {
+    color: #39e600;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+a:hover {
+    color: #39e600;
+}
+
+a {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-decoration: none;
+}
+
+.welcome_container {
+    padding-top: 200px;
+    padding-bottom: 200px;
+}
+
+#wp {
+    text-align: center;
+    font-size: 50px;
+    font-family: "welcome";
+    color: white;
+}
+
+.empty_container {
+    padding: 1000px;
+}
+
+#p {
+    background-color: rgb(255, 255, 255, 0.5);
+    font-size: 20px;
+    height: 500px;
+}
+
+h5 {
+    text-align: center;
+}
+
+.about {
+    float: left;
+}
+
+.col {
+    position: absolute;
+    width: 50%;
+    max-height: 500px;
+}
+
+.right {
+    right: 0px;
+}
+
+.left {
+    left: 0px;
+}
+
+#imgc {
+    height: 500px;
+}
