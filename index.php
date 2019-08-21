@@ -1,15 +1,35 @@
+<?php
+        session_start();
+        function login_button(){
+            if(empty($_SESSION)){
+                echo"<a href='login.php'>Login</a>";
+            }
+            else{
+                $code="<?php  session_unset();session_destroy(); ?>";
+                echo "<a action='' href='index.php'>Logout</a>";
+            }
+        }
+           
+        
+      function show_name(){
+          if(!empty($_SESSION)){
+             echo $_SESSION["name"];
+          }
+      }
+?>
 <html>
-
 <head>
     <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script src="js/index.js">  
+    </script>
 </head>
 
-<body class="background">
+<body class="background" onload="load()">
     <div class="header">
         <table>
             <tr>
                 <td>
-                    <div>Usename</div>
+                    <div><?php show_name();?></div>
                 </td>
                 <td id="menu">
                     <div class="dropdown">
@@ -40,7 +60,7 @@
                     </div>
                     <a>Contact</a>
                     <a>About</a>
-                    <a>Login</a>
+                    <a action="<?php session_unset();session_destroy(); ?>" ? href="index.php">asd</a>
                 </td>
             </tr>
         </table>
@@ -63,9 +83,7 @@
         </div>
 
     </div>
-    <div class="empty_container">
     </div>
-
 </body>
 
 </html>

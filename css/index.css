@@ -20,6 +20,7 @@
     background-color: rgb(0, 0, 0, 0.3);
     display: inline-block;
     width: 100%;
+    left: 0px;
     top: 0px;
     position: fixed;
 }
@@ -73,11 +74,12 @@ a {
     padding-left: 20px;
     padding-right: 20px;
     text-decoration: none;
+    color: white;
 }
 
 .welcome_container {
-    padding-top: 200px;
-    padding-bottom: 200px;
+    padding-top: 300px;
+    padding-bottom: 300px;
 }
 
 #wp {
@@ -85,10 +87,6 @@ a {
     font-size: 50px;
     font-family: "welcome";
     color: white;
-}
-
-.empty_container {
-    padding: 1000px;
 }
 
 #p {
@@ -121,4 +119,5 @@ h5 {
 
 #imgc {
     height: 500px;
+    width: 100%;
 }
