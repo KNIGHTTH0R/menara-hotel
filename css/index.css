@@ -1,3 +1,5 @@
+html {}
+
 @font-face {
     font-family: welcome;
     src: url("../fonts/MidNight.ttf");
@@ -120,4 +122,17 @@ h5 {
 #imgc {
     height: 500px;
     width: 100%;
+}
+
+#map {
+    position: relative;
+}
+
+.empty {
+    padding-top: 1000px;
+}
+
+.footer {
+    background-color: rgb(255, 255, 255, 0.5);
+    height: 300px;
 }
