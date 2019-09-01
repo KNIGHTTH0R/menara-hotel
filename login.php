@@ -1,7 +1,7 @@
 <?php
 session_start();
 $status;
-$conn = new mysqli("localhost","root", "","db1");
+$conn = new mysqli("localhost","root","","db1");
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
@@ -43,6 +43,7 @@ $status="Worng Passwor or Username";
             echo $status;
         }
         ?>
+        <a href="register.php">register</a>
     </body>
 
     </html>

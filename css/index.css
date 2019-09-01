@@ -1,8 +1,5 @@
-html {}
-
-@font-face {
-    font-family: welcome;
-    src: url("../fonts/MidNight.ttf");
+html {
+    scroll-behavior: smooth;
 }
 
 .background {
@@ -12,9 +9,104 @@ html {}
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    width: 100%;
     height: 100%;
+    left: 0px;
 }
+
+
+/*about*/
+
+#p {
+    background-color: rgb(255, 255, 255, 0.5);
+    font-size: 20px;
+    height: 500px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.about {
+    float: left;
+    border-color: #39e600;
+    border-width: 5px;
+}
+
+.col {
+    position: absolute;
+    width: 50%;
+    max-height: 500px;
+}
+
+.right {
+    right: 0px;
+}
+
+.left {
+    left: 0px;
+}
+
+#imgc {
+    height: 500px;
+    width: 100%;
+}
+
+.empty {
+    padding-top: 1000px;
+}
+
+
+/*about*/
+
+
+/*welcome*/
+
+@font-face {
+    font-family: welcome;
+    src: url("../fonts/MidNight.ttf");
+}
+
+#wp {
+    text-align: center;
+    font-size: 100px;
+    font-family: "welcome";
+    color: #fc6500;
+}
+
+.welcome_container {
+    padding-top: 300px;
+    padding-bottom: 300px;
+    left: 0px;
+    right: 0px;
+}
+
+#welcomep {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+
+/*welcome*/
+
+
+/*footer*/
+
+.footer {
+    background-color: rgb(255, 255, 255, 0.5);
+    height: 300px;
+    width: 100%;
+}
+
+#map {
+    position: relative;
+}
+
+
+/*footer*/
+
+
+/*header*/
 
 .header {
     padding-top: 20px;
@@ -23,6 +115,7 @@ html {}
     display: inline-block;
     width: 100%;
     left: 0px;
+    right: 0px;
     top: 0px;
     position: fixed;
 }
@@ -79,60 +172,5 @@ a {
     color: white;
 }
 
-.welcome_container {
-    padding-top: 300px;
-    padding-bottom: 300px;
-}
 
-#wp {
-    text-align: center;
-    font-size: 50px;
-    font-family: "welcome";
-    color: white;
-}
-
-#p {
-    background-color: rgb(255, 255, 255, 0.5);
-    font-size: 20px;
-    height: 500px;
-}
-
-h5 {
-    text-align: center;
-}
-
-.about {
-    float: left;
-}
-
-.col {
-    position: absolute;
-    width: 50%;
-    max-height: 500px;
-}
-
-.right {
-    right: 0px;
-}
-
-.left {
-    left: 0px;
-}
-
-#imgc {
-    height: 500px;
-    width: 100%;
-}
-
-#map {
-    position: relative;
-}
-
-.empty {
-    padding-top: 1000px;
-}
-
-.footer {
-    background-color: rgb(255, 255, 255, 0.5);
-    height: 300px;
-}
+/*header*/

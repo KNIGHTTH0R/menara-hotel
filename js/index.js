@@ -15,6 +15,24 @@ function slideshow() {
             break;
         case 4:
             document.getElementById("imgc").src = "images/4.jpg";
+            break;
+        case 5:
+            document.getElementById("imgc").src = "images/5.jpg";
+            break;
+        case 6:
+            document.getElementById("imgc").src = "images/6.jpg";
+            break;
+        case 7:
+            document.getElementById("imgc").src = "images/7.jpg";
+            break;
+        case 8:
+            document.getElementById("imgc").src = "images/8.jpg";
+            break;
+        case 9:
+            document.getElementById("imgc").src = "images/9.jpg";
+            break;
+        case 10:
+            document.getElementById("imgc").src = "images/4.jpg";
             no = 0;
             break;
     }
