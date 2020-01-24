@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 function rolebutton(){
     if(!empty($_SESSION)){
         if($_SESSION["role"]=="manager"){   
-            echo "<a href='Manager.php'>Manage</a>";
+            echo "<a href='Manager.php'>Managers</a>";
         }
      }
     
@@ -63,22 +63,36 @@ function submitcheckb()
                     <div><?php show_name();?></div>
                 </td>
                 <td id="menu">
-                <a href="index.php">Home</a>
                 <?php rolebutton();?>
-                
-                    <div   class="dropdown">
-                        <a href="banquet.php" class="dropbtn">Banquet hall</a>
-                   
+                <a href="index.php">Home</a>
+                    <div class="dropdown">
+                        <a class="dropbtn">Banquet hall</a>
+                        <div class="dropdown-content">
+                            <a href="banquet.php">Booking Hall</a>
+                            <a href="#">Gallery</a>
+                            <a href="#">Feedback</a>
+                        </div>
                     </div>
                     <div class="dropdown">
-                        <a  href="accomodation.php" class="dropbtn">Accommodation</a>
+                        <a class="dropbtn">Accommodation</a>
+                        <div class="dropdown-content">
+                            <a href="accomodation.php">Booking Room</a>
+                            <a href="#">Order Meals</a>
+                            <a href="#">Request a waiter</a>
+                            <a href="#">Feedback</a>
+                        </div>
                     </div>
                     <div class="dropdown">
-                        <a href="restaurent.php" class="dropbtn">Restaurant</a>
-                        <div class="dropdown-content"></div>
+                        <a class="dropbtn">Restaurant</a>
+                        <div class="dropdown-content">
+                            <a href="#">Reserve Table</a>
+                            <a href="#">Order Meals</a>
+                            <a href="#">Request Waiter</a>
+                            <a href="#">Feedback</a>
+                        </div>
                     </div>
-                    <a href="#footert1">Contact</a>
-                    <a href="#footert1">About</a>
+                    <a href="#footer">Contact</a>
+                    <a href="#about">About</a>
                     <?php login_button(); ?>
                 </td>
             </tr>
@@ -95,9 +109,9 @@ function submitcheckb()
   <!--About-->
   <div class="about">
       <div class="aboutText"><h2>ABOUT</h2>
-      Menara hotel and restaurant is a perfect place to spend a holiday to your own in the area of Walasmulla. It is bejeweled as one of the finest hotel in the southern province. We ensure your stay is perfect and your experiences are complete since 2002 our
+      Minoli hotel and restaurant is a perfect place to spend a holiday to your own in the area of Walasmulla. It is bejeweled as one of the finest hotel in the southern province. We ensure your stay is perfect and your experiences are complete since 2002 our
             valuable guests have experienced a luxurious gateway in the city with our-on-site facilities and contemporary amenities. No matter the event, be it the wedding of the century or a small corporate business meeting or even a birthday party,
-            Menara hotel and restaurant is equipped to create the perfect affair. Thanks to the dedicated service of our experienced teams, we have a fantastic selection of spacious wedding halls in Sri Lanka. Modern boardrooms that will add a touch of
+            Minoli hotel and restaurant is equipped to create the perfect affair. Thanks to the dedicated service of our experienced teams, we have a fantastic selection of spacious wedding halls in Sri Lanka. Modern boardrooms that will add a touch of
             elegance and magic to your special celebration.
       </div>
       <div class="imgc">
@@ -105,22 +119,12 @@ function submitcheckb()
       </div>
   </div>
   <!--About-->
+   <!--facilities-->
   <div class="facilities">
-  <h2 style="color:white;">Facilities</h2>
-      <div class="icon">Restaurent</div>
-      <div class="icon">Accomadation</div>
-      <div class="icon">Tasty Foods</div>
-      <div class="icon">Banquet Halls</div>
-      <div class="icon">Children Play Area</div>
-      <div class="icon">Free WiFi</div>
-      <div class="icon">Fully Air Conditioned</div>
-      <div class="icon">Pre Reservation</div>
-      <div class="icon">Forigen Foods</div>
-      <div class="icon">Local Foods</div>
-      <div class="icon">Trusted Service</div>
-      <div class="icon">Various Payment Method</div>
-      
+    <h2>Facilities</h2>
+      <div class="icon"></div>
   </div>
+<!--facilities-->
   <!--feedback-->
   <div style="text-align:center;color:white;"><h2>Feedback<h2></div>
     <div class="coment"><form id="feedback_form" method="post" action="index.php" onsubmit="<?php submitchecka();submitcheckb() ?>">

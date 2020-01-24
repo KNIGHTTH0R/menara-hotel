@@ -1,49 +1,108 @@
 <?php
 session_start();
-$status;
 $conn = new mysqli("localhost","root","","db1");
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
+$conn3 = new mysqli("localhost","root","","db1");
+$status1=null;
+$status2=null;
+$checkreg=null;
 if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-$sql = "SELECT * FROM users";
-$result = $conn->query($sql);
-while($row = $result->fetch_assoc()) {
-    if($row["username"]==$_POST["username"]){
-        if($row["password"]==$_POST["password"]){
-            $_SESSION["username"] =$_POST["username"];
-            $_SESSION["password"] =$_POST["password"];
-            $_SESSION["name"]=$row["name"];
-            $_SESSION["loged_in"]=true;
-            if($row["role"]=="manager"){
-
-                header("Location:manager.php");
+    if(isset($_POST['repassword'])){
+        
+            $username=$_POST['username'];
+            $name=$_POST['name'];
+            $password=$_POST['password'];
+            $role="user";
+            if($_POST['repassword']==$password){
+                $sql3="select * from users";
+                $usersdata= $conn3->query($sql3);
+                while($row = $usersdata->fetch_assoc()) {
+                    if($row["username"]==$username){
+                        $checkreg=0;
+                        $status1="User Name already used";
+                        break;
+                    }
+                     $checkreg=1;
+                }
+        
+                if($checkreg==1){
+                    $sql4 = "INSERT INTO  users (username,name,password,role) VALUES ('$username','$name', '$password','$role')";
+                    $result = $conn3->query($sql4);
+                    $status1="Done.Login now.";
+                    unset($_POST);
+              
+                }
             }
             else{
-                header("Location:index.php");
+            $status1="password must same";
+            unset($_POST);
             }
-           
-        }
+
     }
-        
-}
-$status="Worng Passwor or Username";
-}
-?>
-    <html>
+    if(isset($_POST['passwordl'])){
+        $sql = "SELECT * FROM users";
+        $result = $conn->query($sql);
+        while($row = $result->fetch_assoc()) {
+        if($row["username"]==$_POST["username"]){
+            if($row["password"]==$_POST["passwordl"]){
+                $_SESSION["username"] =$_POST["username"];
+                $_SESSION["password"] =$_POST["passwordl"];
+                $_SESSION["name"]=$row["name"];
+                $_SESSION["role"]=$row["role"];
 
-    <body>
-        <form method="post" action="login.php">
-            <input type="text" name="username" required><br>
-            <input type="password" name="password" required><br>
-            <input type="submit">
-        </form>
-        <?php
-        if ($_SERVER['REQUEST_METHOD'] == 'POST'){
-            echo $status;
+                
+
+                if($row["role"]=="manager"){
+
+                    header("Location:manager.php");
+                }
+                else{
+                    header("Location:index.php");
+                }
+           
+            }
         }
-        ?>
-        <a href="register.php">register</a>
-    </body>
+        
+    }
+    $status2="Worng Passwor or Username";
 
-    </html>
+}
+}
+
+?>
+<html>
+    <head>        <link rel="stylesheet" type="text/css" href="css/login.css"></head>
+    <body>
+        <div class="home"><a href="index.php"><img style="Width:50px;height:50px;" src="images/home.png"></a></div>
+        <div style="height:70px;"></div>
+        <div class="form">
+            <div class="loging">
+            <br><br><br><br><br><br><br><br><br>
+                <form method="post" action="login.php">
+                    <input type="text" name="username" placeholder="Username" required><br>
+                    <input type="password" name="passwordl" placeholder="Password" required><br>
+                    <input type="submit" Value="Login">
+                </form>
+                <?php
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+                    echo $status2;
+                    }   
+                ?>
+            </div>
+            <div class="register">
+                <br><br><br><br><br><br>
+                <form method="post" action="login.php" >
+                  <input type="text" name="username" placeholder="Username" required><br>
+                   <input type="text" name="name" placeholder="Name" required><br>
+                   <input type="password" name="password" placeholder="Password" required><br>
+                    <input type="password" name="repassword" placeholder="RE-Password" required><br>
+                    <input type="submit" value="Sign Up">
+                </form>
+                <?php
+                    if ($_SERVER['REQUEST_METHOD'] == 'POST'){
+                    echo $status1;
+                    }   
+                ?>
+            </div>
+        </div>
+    </body>
+</html>
